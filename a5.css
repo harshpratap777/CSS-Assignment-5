@@ -1,0 +1,179 @@
+/* === Base Reset & Background === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #f0f0f0, #dbeafe);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 20px;
+  overflow-x: hidden;
+}
+
+/* === Floating Animated Heading === */
+h1 {
+  text-align: center;
+  font-size: 42px;
+  text-decoration: underline;
+  background: linear-gradient(to right, #f83600, #f9d423);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 50px;
+
+  border: 4px double #f9d423;
+  padding: 20px 50px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+
+  animation: floatText 4s ease-in-out infinite;
+}
+
+@keyframes floatText {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* === Animated Container Sections === */
+.Rotate, .skew, .skewy, .HWR {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 40px;
+  width: 100%;
+  max-width: 1100px;
+  margin-bottom: 80px;
+  padding: 0 40px;
+  justify-items: center;
+}
+
+/* === Shared Glass Box Styles === */
+.Rotate1, .Rotate2, .Rotate3,
+.skew1, .skew2, .skew3,
+.skewy1, .skewy2, .skewy3,
+.hwr1, .hwr2, .hwr3 {
+  height: 110px;
+  width: 110px;
+  padding: 15px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  color: #333;
+  text-align: center;
+  transition: all 0.4s ease;
+  perspective: 600px;
+}
+
+/* === 3D Hover Effects === */
+.Rotate1:hover, .Rotate2:hover, .Rotate3:hover,
+.skew1:hover, .skew2:hover, .skew3:hover,
+.skewy1:hover, .skewy2:hover, .skewy3:hover,
+.hwr1:hover, .hwr2:hover, .hwr3:hover {
+  transform: scale(1.15) rotateX(5deg) rotateY(10deg);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* === Unique Backgrounds & Animations === */
+
+/* ROTATE Z */
+.Rotate1, .Rotate2, .Rotate3 {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  animation: rotate 3s linear infinite;
+}
+@keyframes rotate {
+  0%   { transform: rotateZ(0deg); }
+  100% { transform: rotateZ(360deg); }
+}
+
+/* SKEW X */
+.skew1, .skew2, .skew3 {
+  background: linear-gradient(135deg, #ffb347, #ffcc33);
+  animation: skewX 2s ease-in-out infinite;
+}
+@keyframes skewX {
+  0%   { transform: skewX(0deg); }
+  50%  { transform: skewX(20deg); }
+  100% { transform: skewX(0deg); }
+}
+
+/* SKEW Y */
+.skewy1, .skewy2, .skewy3 {
+  background: linear-gradient(135deg, #43e97b, #38f9d7);
+  color: #222;
+  animation: skewY 3s ease-in-out infinite;
+}
+@keyframes skewY {
+  0%   { transform: skewY(0deg); }
+  50%  { transform: skewY(-15deg); }
+  100% { transform: skewY(0deg); }
+}
+
+/* HWR Animations */
+.hwr1 {
+  background: linear-gradient(135deg, #ffafbd, #ffc3a0);
+  animation: autoHeight 2.5s infinite alternate ease-in-out;
+}
+@keyframes autoHeight {
+  from { height: 80px; }
+  to   { height: 130px; }
+}
+
+.hwr2 {
+  background: linear-gradient(135deg, #f6d365, #fda085);
+  animation: autoWidth 2.5s infinite alternate ease-in-out;
+}
+@keyframes autoWidth {
+  from { width: 90px; }
+  to   { width: 140px; }
+}
+
+.hwr3 {
+  background: linear-gradient(135deg, #bdc3c7, #2c3e50);
+  color: white;
+  animation: halfRotate 3s ease-in-out infinite;
+}
+@keyframes halfRotate {
+  0%  { transform: rotate(0deg); }
+  25% { transform: rotate(20deg); }
+  100% { transform: rotate(0deg); }
+}
+
+/* === Responsive Media Queries === */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 30px;
+    padding: 15px 25px;
+  }
+
+  .Rotate, .skew, .skewy, .HWR {
+    gap: 25px;
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .Rotate, .skew, .skewy, .HWR {
+    grid-template-columns: 1fr;
+  }
+
+  .Rotate1, .Rotate2, .Rotate3,
+  .skew1, .skew2, .skew3,
+  .skewy1, .skewy2, .skewy3,
+  .hwr1, .hwr2, .hwr3 {
+    width: 100%;
+    font-size: 14px;
+  }
+}
