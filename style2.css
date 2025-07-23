@@ -1,0 +1,222 @@
+/* === Reset and Base === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to right, #dbeafe, #e0f2f1);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 20px;
+}
+
+/* === Heading Style === */
+h3 {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #8e2de2, #4a00e0, #00c9ff, #92fe9d);
+  background-size: 400% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientSlide 6s ease infinite;
+  margin-bottom: 25px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  padding: 18px 40px;
+  border-radius: 30px;
+  backdrop-filter: blur(14px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* === Heading Animation === */
+@keyframes gradientSlide {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* === Grid Layout === */
+.main {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+  justify-items: center;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+}
+
+/* === Box Base Style === */
+.box1, .box2, .box3, .box4, .box5, .box6, .box7 {
+  width: 120px;
+  height: 120px;
+  background: linear-gradient(145deg, #ffffff, #f0f0f0);
+  border: 1px solid #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  color: #333;
+  transition: all 0.4s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+/* === Hover Effects (also used for animation keyframes) === */
+.box1:hover {
+  width: 160px;
+  background: #b2ebf2;
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.box2:hover {
+  height: 180px;
+  background: #ffe082;
+  transform: scale(1.05);
+}
+
+.box3:hover {
+  width: 150px;
+  height: 150px;
+  background: #ffd54f;
+  transform: rotate(5deg);
+}
+
+.box4:hover {
+  width: 200px;
+  height: 100px;
+  border-radius: 25px 0 25px 0;
+  background: #ce93d8;
+  transform: scale(1.1) rotate(-3deg);
+}
+
+.box5:hover {
+  transform: skew(15deg);
+  background: #a5d6a7;
+}
+
+.box6:hover {
+  transform: skewY(15deg);
+  background: #81d4fa;
+}
+
+.box7:hover {
+  background: linear-gradient(to right, #ef5350, #e53935);
+  color: white;
+  transform: scale(1.1);
+  box-shadow: 0 0 10px #e53935;
+}
+
+/* === Auto Hover Animations === */
+@keyframes autoHover1 {
+  0%, 100% {
+    width: 120px;
+    background: linear-gradient(145deg, #ffffff, #f0f0f0);
+    transform: translateY(0);
+  }
+  50% {
+    width: 160px;
+    background: #b2ebf2;
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes autoHover2 {
+  0%, 100% {
+    height: 120px;
+    background: linear-gradient(145deg, #ffffff, #f0f0f0);
+    transform: scale(1);
+  }
+  50% {
+    height: 180px;
+    background: #ffe082;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes autoHover3 {
+  0%, 100% {
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(145deg, #ffffff, #f0f0f0);
+    transform: rotate(0deg);
+  }
+  50% {
+    width: 150px;
+    height: 150px;
+    background: #ffd54f;
+    transform: rotate(5deg);
+  }
+}
+
+@keyframes autoHover4 {
+  0%, 100% {
+    width: 120px;
+    height: 120px;
+    border-radius: 15px;
+    background: linear-gradient(145deg, #ffffff, #f0f0f0);
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    width: 200px;
+    height: 100px;
+    border-radius: 25px 0 25px 0;
+    background: #ce93d8;
+    transform: scale(1.1) rotate(-3deg);
+  }
+}
+
+@keyframes autoHover5 {
+  0%, 100% {
+    transform: skew(0deg);
+    background: linear-gradient(145deg, #ffffff, #f0f0f0);
+  }
+  50% {
+    transform: skew(15deg);
+    background: #a5d6a7;
+  }
+}
+
+@keyframes autoHover6 {
+  0%, 100% {
+    transform: skewY(0deg);
+    background: linear-gradient(145deg, #ffffff, #f0f0f0);
+  }
+  50% {
+    transform: skewY(15deg);
+    background: #81d4fa;
+  }
+}
+
+@keyframes autoHover7 {
+  0%, 100% {
+    transform: scale(1);
+    background: linear-gradient(145deg, #ffffff, #f0f0f0);
+    color: #333;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  50% {
+    transform: scale(1.1);
+    background: linear-gradient(to right, #ef5350, #e53935);
+    color: white;
+    box-shadow: 0 0 10px #e53935;
+  }
+}
+
+/* === Apply Animations === */
+.box1 { animation: autoHover1 4s ease-in-out infinite; }
+.box2 { animation: autoHover2 5s ease-in-out infinite; animation-delay: 0.5s; }
+.box3 { animation: autoHover3 6s ease-in-out infinite; animation-delay: 1s; }
+.box4 { animation: autoHover4 5.5s ease-in-out infinite; animation-delay: 1.5s; }
+.box5 { animation: autoHover5 4.5s ease-in-out infinite; animation-delay: 2s; }
+.box6 { animation: autoHover6 5s ease-in-out infinite; animation-delay: 2.5s; }
+.box7 { animation: autoHover7 6s ease-in-out infinite; animation-delay: 3s; }
